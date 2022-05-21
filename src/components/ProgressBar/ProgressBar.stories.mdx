@@ -1,5 +1,5 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
-import ProgressBar from './ProgressBar';
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import ProgressBar from "./ProgressBar";
 
 <Meta
   title="ProgressBar"
@@ -7,24 +7,28 @@ import ProgressBar from './ProgressBar';
   argTypes={{
     value: {
       control: {
-        type: 'number',
+        type: "number",
         min: 0,
         max: 100,
       },
     },
     size: {
       control: {
-        type: 'select',
-        options: ['small', 'medium', 'large'],
+        type: "select",
+        options: ["small", "medium", "large"],
       },
     },
   }}
 />
 
-export const Template = (args) => <ProgressBar {...args} />;
+export const Template = (args) => (
+  <div style={{ width: 370 }}>
+    <ProgressBar {...args} />
+  </div>
+);
 
 # ProgressBar
 
-<Story name="Default" args={{ value: 50, size: 'medium' }}>
+<Story name="Default" args={{ value: 50, size: "medium" }}>
   {Template.bind({})}
 </Story>
